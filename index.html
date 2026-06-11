@@ -2,39 +2,43 @@
 <html>
     <head>
         <link rel='stylesheet' href='index.css'>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Smythe&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     </head>
-    <body>
+    <body class="ui-class">
         <header>
-            <img>
-            <p>
-                <span>Jimmys Dinner</span>
-                The best burgers and pizzas in town
-            </p>
+            <img class="header-img" src="images/header.png">
         </header>
         <main>
             <section class="items-section">
-                <ul>
+                <ul id="items-list">
                     <!-- render items -->
                 </ul>
             </section>
-            <section class="price-section">
-                <ul>
+            <section class="price-section" id="price-section">
+                <p id="added-items-heading">Your order</p>
+                <ul id="price-list">
                     <!-- render prices -->
                 </ul>
-                <button>Complete order</button>
+                <button id="complete-order">Complete order</button>
             </section>
             <section class="card-details-modal">
-                <form>
+                <form class="card-details-form">
                     <label>Enter your name</label>
-                        <input type="text" placeholder='Per borgen'>
+                        <input class="form-input" type="text" placeholder='Per borgen'>
                     <label>Enter card number</label>
-                        <input type ='text' placeholder="0000-0000-0000-0000">
+                        <input class="form-input" type ='text' placeholder="0000-0000-0000-0000">
                     <label>Enter cvv</label>
-                        <input type="text" placeholder="123">
+                        <input class="form-input" type="text" placeholder="123">
                     <button>Pay</button>
                 </form>
             </section>
             <p class="order-message"></p>
+        </main>
+        <script type="module" src="index.js"></script>
+    </body>
+</html>
 
 
             

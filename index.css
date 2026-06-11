@@ -1,3 +1,82 @@
 body {
-    margin: 0;
+    margin:auto;
+    padding:0;
+    width:600px;
+    height:1161px;
 } 
+
+header{
+    width:600px;
+    height:167px;
+}
+
+.header-img{
+    width:600px;
+    height:167px;
+}
+
+.card-details-form{
+    margin:10px auto;
+    display:none;
+    flex-direction:column;
+    align-items:center;
+}
+
+.form-input{
+    width:150px;
+}
+
+/* .price-section{
+    display:none;
+} */
+
+.item-add-section{
+    display:flex;
+    gap:20px;
+    width:508px;
+    height:140px;
+    margin:0px;
+    border-bottom:2px solid #D2D2D2;
+}
+
+#items-list{
+    list-style-type:none;
+    margin:50px 0px 0px 46px;
+}
+
+.item-emoji{
+    width:70px;
+    height:89px;
+}
+
+.item-details{
+    margin:0px;
+}
+
+.item-name{
+    margin:0px;
+    font-family: "Smythe", system-ui;
+    font-weight: regular;
+    color:#000000;
+    font-size:28px;
+
+}
+
+.item-ingredients{
+    margin:0px;
+}
+
+.item-price{
+    margin:0px;
+}
+
+.item-add-button{
+    border:2px solid #D2D2D2;;
+    background:0;
+    border-radius:50%;
+    height:50px;
+    width:50px;
+    font-size:32px;
+    font-weight:lighter;
+    font-family: "Inter", sans-serif;
+}
