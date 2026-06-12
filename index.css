@@ -128,7 +128,6 @@ header{
     font-weight: regular;
     color:#000000;
     font-size:28px;
-
 }
 
 .item-ingredients{
@@ -214,4 +213,9 @@ header{
     justify-content:center;
     background:#ECFDF5;
     color:#065F46;
+}
+
+#message{
+    font-size:32px;
+    font-family: "Smythe", system-ui;
 }
