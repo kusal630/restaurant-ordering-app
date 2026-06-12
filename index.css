@@ -1,8 +1,9 @@
 body {
     margin:auto;
-    padding:0;
+    padding:0px;
     width:600px;
     height:1161px;
+    position:relative;
 } 
 
 header{
@@ -15,45 +16,86 @@ header{
     height:167px;
 }
 
-#card-details-modal{
-    margin:38px 0px;
-    display:none;
-    flex-direction:column;
-    align-items:center;
-    position:absolute;
-    /* width:524px;
-    height:542.24px; */
-    top:50%;
-    background:white;
-    border:1px solid red;
-    border-radius:5px;
-    box-shadow:0px 0px 100px black;
-}
 
-.card-details-form{
-    width:524px;
-    height:542.24px;
-    display:flex;
-    flex-direction:column;
-    align-items: center;
-    justify-content: center;
-}
+/* price section */
 
-.hero-section{
-    position:relative;
-}
-
-.form-input{
-    width:150px;
-}
-
-#price-section{
+.price-section{
     width:508px;
     height:319px;
     display:none;
+    margin:30px 0px 0px auto;
+    padding:0px;
+}
+
+#price-list{
+    font-family: "Smythe", system-ui;
+    border-bottom:2px solid #393333;
+    width:470px;
+    margin:0px 20px 20px 0px;
+    padding:0px;
 }
 
 
+.item-price-section{
+    list-style-type:none;
+    margin:0px 0px;
+    width:508px;
+    display:flex;
+    padding:2px;
+}
+
+
+.added-item-name{
+    color:#000000;
+    font-size:28px;
+    margin:0px;
+    padding:0px;
+}
+
+#added-items-heading{
+    text-align:center;
+    font-size:28px;
+    font-family: "Smythe", system-ui;
+    margin-bottom:30px;
+}
+
+.remove-btn{
+    border:0;
+    background:none;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size:12px;
+    padding:0px;
+    height:20px;
+    margin:8px 0px 0px 8px; 
+    color:#BBBBBB;
+}
+
+.added-item-price{
+    font-family: "Smythe", system-ui;
+    color:#000000;
+    font-size:20px;
+    margin:8px 40px 0px auto;
+}
+
+.item-count{
+    margin:12px 0px 0px 50px;
+    font-size:10px;
+    font-family: Verdana, Geneva, sans-serif;
+    color:#BBBBBB;
+}
+
+#complete-order{
+    width:508px;
+    height:60px;
+    border:0;
+    border-radius:3px;
+    background:#16DB99;
+    font-family: Verdana, Geneva, sans-serif;
+    color:white;
+    font-size:16px;
+}
+
+/* item section */
 
 .item-add-section{
     display:flex;
@@ -67,11 +109,13 @@ header{
 #items-list{
     list-style-type:none;
     margin:50px 0px 0px 46px;
+    padding:0px;
 }
 
 .item-emoji{
     width:70px;
     height:89px;
+    margin:0px;;
 }
 
 .item-details{
@@ -99,9 +143,75 @@ header{
     border:2px solid #D2D2D2;;
     background:0;
     border-radius:50%;
-    height:50px;
-    width:50px;
     font-size:32px;
+    text-align:center;
     font-weight:lighter;
     font-family: "Inter", sans-serif;
+    margin:0px  0px 0px auto;
+    height:45px;
+    width:45px;
+}
+
+/* card modal */
+
+
+#card-details-modal{
+    /* margin:38px 0px; */
+    display:none;
+    flex-direction:column;
+    position:absolute;
+    top:292px;
+    left:38px;
+    width:524px;
+    height:542.24px;
+    background:white;
+    /* border:1px solid red; */
+    border-radius:5px;
+    box-shadow:0px 0px 100px black;
+}
+
+.card-details-form{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    font-family: Verdana, Geneva, sans-serif;
+    margin-left:0px;
+}
+
+.form-input{
+    margin:20px 20px;
+    padding:20px;
+    width:400px;
+    height:auto;
+    font-size: 20px; 
+    color:#757575;
+    border-radius:4px;
+}
+
+.card-details-form h1{
+    font-size:24px;
+    margin:40px 0px 40px 0px; 
+} 
+
+#pay-btn{
+    padding:25px 210px;
+    background:#16DB99;
+    border-radius:5px;
+    border:0;
+    margin-top:10px;
+    font-size:20px;
+    color:white;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+#message-container{
+    display:none;
+    width:504px;
+    height:120px;
+    margin:30px 0px 0px 46px;
+    align-items:center;
+    justify-content:center;
+    background:#ECFDF5;
+    color:#065F46;
 }

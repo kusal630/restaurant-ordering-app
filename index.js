@@ -4,7 +4,6 @@ const itemsList = document.getElementById('items-list')
 const priceList = document.getElementById('price-list')
 const priceSection = document.getElementById('price-section')
 const completeOrder = document.getElementById('complete-order')
-const orderMessage = document.getElementById('message')
 
 document.addEventListener("click",function(e){
     menuArray.forEach(function(item){
@@ -18,11 +17,29 @@ document.addEventListener("click",function(e){
     if (e.target.id===`complete-order`){
         confirmOrder()
     }
-    
+    if (e.target.id===`pay-btn`){
+        renderMessage()
+    }
 })
 
 let totalPrice = 0
 
+
+const cardDetailsModal = document.getElementById('card-details-modal')
+
+function renderMessage(){
+    const orderMessageContainer = document.getElementById('message-container')
+    const orderMessage = document.getElementById('message-container')
+    cardDetailsModal.style.display='none'
+    priceSection.style.display='none'
+    const inputName = document.getElementById('input-name')
+    orderMessage.textContent=`Thanks ${inputName.value}! your order is on the way 
+                             Returning to default state in 5 seconds`
+    orderMessageContainer.style.display='flex'
+    setTimeout(()=>{
+        window.location.reload()
+    },5000)
+}
 
 
 function removePriceList(id){
@@ -31,15 +48,9 @@ function removePriceList(id){
 }
 
 function confirmOrder(){
-    priceSection.style.display='none'
+    // priceSection.style.display='none'
     completeOrder.style.display='none'
     totalPrice=0
-    // orderMessage.textContent=`Thanks NAME! your order is on the way 
-    //                             Returning to default state in 5 seconds`
-    // setTimeout(()=>{
-    //     window.location.reload()
-    // },5000)
-    const cardDetailsModal = document.getElementById('card-details-modal')
     cardDetailsModal.style.display='block'
 }
 
@@ -62,11 +73,11 @@ function renderPrices(id){
         if (item.id===id && countOfId===1 && addedItemsIds.includes(id)){
             totalPrice+=item.price
             return `
-            <li class='price-section' id='price-section-${item.id}'>
-                <p class='added-item-name'>${item.name}</p>
-                <p id='count-item-${item.id}'>Count:${countOfId}</p>
-                <button id='remove-btn-${item.id}' class='remove-btn'>remove</button>
-                <p id='price-${item.id}' class='added-item-price'>$${item.price}</p>
+            <li class='item-price-section' id='price-section-${item.id}'>
+                    <p class='added-item-name'>${item.name}</p>
+                    <button id='remove-btn-${item.id}' class='remove-btn'>remove</button>
+                    <p id='count-item-${item.id}' class='item-count'>Count:${countOfId}</p>
+                    <p id='price-${item.id}' class='added-item-price'>$${item.price}</p>
             </li>`
         }else if(countOfId>1){
             const countItems = document.getElementById(`count-item-${id}`)

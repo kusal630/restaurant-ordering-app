@@ -21,23 +21,36 @@
                 <ul id="price-list">
                     <!-- render prices -->
                 </ul>
-                <button id="complete-order">Complete order</button>
+                <p id="total-price">Total price</p>
+                <button id="complete-order" type="submit">Complete order</button>
             </section>
-            <p id="message"> 
-                <!-- render the message -->
-            </p>
+            <div id="message-container">
+                <p id="message"> 
+                    <!-- render the message -->
+                </p>
+            </div>
             <section class="card-details-modal" id="card-details-modal">
                 <form class="card-details-form">
-                    <label>Enter your name</label>
-                        <input class="form-input" type="text" placeholder='Per borgen'>
-                    <label>Enter card number</label>
-                        <input class="form-input" type ='text' placeholder="0000-0000-0000-0000">
-                    <label>Enter cvv</label>
-                        <input class="form-input" type="text" placeholder="123">
-                    <button>Pay</button>
+                    <h1>Enter card details</h1>
+                    <input 
+                    class="form-input" 
+                    id="input-name" 
+                    type="text" 
+                    placeholder='Enter your name'
+                    required>
+                    <input 
+                    class="form-input" 
+                    type ='text' 
+                    placeholder="Enter card number"
+                    required>
+                    <input 
+                    class="form-input" 
+                    type="text" 
+                    placeholder="Enter CVV"
+                    required>
+                    <button id="pay-btn">Pay</button>
                 </form>
             </section>
-            <p class="order-message"></p>
         </main>
         <script type="module" src="index.js"></script>
     </body>
