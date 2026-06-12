@@ -15,20 +15,43 @@ header{
     height:167px;
 }
 
-.card-details-form{
-    margin:10px auto;
+#card-details-modal{
+    margin:38px 0px;
     display:none;
     flex-direction:column;
     align-items:center;
+    position:absolute;
+    /* width:524px;
+    height:542.24px; */
+    top:50%;
+    background:white;
+    border:1px solid red;
+    border-radius:5px;
+    box-shadow:0px 0px 100px black;
+}
+
+.card-details-form{
+    width:524px;
+    height:542.24px;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section{
+    position:relative;
 }
 
 .form-input{
     width:150px;
 }
 
-/* .price-section{
+#price-section{
+    width:508px;
+    height:319px;
     display:none;
-} */
+}
 
 .item-add-section{
     display:flex;
