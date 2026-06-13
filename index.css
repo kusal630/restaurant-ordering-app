@@ -20,25 +20,27 @@ header{
 /* price section */
 
 .price-section{
+    font-family: "Smythe", system-ui;
     width:508px;
     height:319px;
     display:none;
-    margin:30px 0px 0px auto;
+    margin:30px 0px 0px 46px;
     padding:0px;
 }
 
 #price-list{
     font-family: "Smythe", system-ui;
     border-bottom:2px solid #393333;
-    width:470px;
-    margin:0px 20px 20px 0px;
+    width:508px;
+    margin:0px 20px 0px 0px;
     padding:0px;
+    /* background:blue; */
 }
 
 
 .item-price-section{
     list-style-type:none;
-    margin:0px 0px;
+    margin:0px 0px 10px 0px;
     width:508px;
     display:flex;
     padding:2px;
@@ -74,7 +76,7 @@ header{
     font-family: "Smythe", system-ui;
     color:#000000;
     font-size:20px;
-    margin:8px 40px 0px auto;
+    margin:8px 5px 0px auto;
 }
 
 .item-count{
@@ -91,8 +93,27 @@ header{
     border-radius:3px;
     background:#16DB99;
     font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
     color:white;
     font-size:16px;
+    margin-top:50px;
+}
+
+.total-price-container{
+    display:flex;
+    margin:10px 0px;
+    color:#0E0E0E;
+}
+
+#total-price-header{
+    margin:0px 0px 0px 0px;
+    font-family: "Smythe", system-ui;
+    font-size:28px;
+}
+
+#total-price{
+    margin:8px 0px 0px auto;
+    font-size:20px;
 }
 
 /* item section */

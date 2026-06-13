@@ -21,7 +21,12 @@
                 <ul id="price-list">
                     <!-- render prices -->
                 </ul>
-                <p id="total-price">Total price</p>
+                <div class="total-price-container">
+                    <p id="total-price-header">Total price</p>
+                    <p id="total-price">
+                        <!-- render total price -->
+                    </p>
+                </div>
                 <button id="complete-order" type="submit">Complete order</button>
             </section>
             <div id="message-container">
@@ -30,14 +35,15 @@
                 </p>
             </div>
             <section class="card-details-modal" id="card-details-modal">
-                <form class="card-details-form">
+                <form class="card-details-form" id="card-details-form">
                     <h1>Enter card details</h1>
                     <input 
+                    required
                     class="form-input" 
                     id="input-name" 
                     type="text" 
                     placeholder='Enter your name'
-                    required>
+                    >
                     <input 
                     class="form-input" 
                     type ='text' 
@@ -48,7 +54,7 @@
                     type="text" 
                     placeholder="Enter CVV"
                     required>
-                    <button id="pay-btn">Pay</button>
+                    <button type="submit" id="pay-btn">Pay</button>
                 </form>
             </section>
         </main>
