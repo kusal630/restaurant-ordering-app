@@ -33,47 +33,50 @@ cardDetailsForm.addEventListener('submit',function(event){
     cardDetailsModal.style.display='none'
     priceSection.style.display='none'
     const inputName = document.getElementById('input-name')
-    orderMessage.textContent=`Thanks ${inputName.value}! your order is on the way 
-                             Returning to default state in 5 seconds`
+    orderMessage.textContent=`Thanks, ${inputName.value}! your order is on the way`
     orderMessageContainer.style.display='flex'
     setTimeout(()=>{
         window.location.reload()
     },5000)
 })
 
-// payBtn.addEventListener('submit',function(e){
-//     // const orderMessageContainer = document.getElementById('message-container')
-//     // const orderMessage = document.getElementById('message-container')
-//     // cardDetailsModal.style.display='none'
-//     // priceSection.style.display='none'
-//     // const inputName = document.getElementById('input-name')
-//     // orderMessage.textContent=`Thanks ${inputName.value}! your order is on the way 
-//     //                          Returning to default state in 5 seconds`
-//     // orderMessageContainer.style.display='flex'
-//     // setTimeout(()=>{
-//     //     window.location.reload()
-//     // },5000)
-// })
 
+let addedItemsIds=[]
+const uniqueAddedItemIds=[]
+let totalPrice = 0
+const addedLists = []
+const totalPriceEl = document.getElementById('total-price')
 
 
 function confirmOrder(){
     // priceSection.style.display='none'
-    completeOrder.style.display='none'
-    cardDetailsModal.style.display='block'
+    if (addedItemsIds.length>0){
+        completeOrder.style.display='none'
+        cardDetailsModal.style.display='block'
+    }
 }
 
-
-let addedItemsIds=[]
-let totalPrice = 0
 
 function removePriceList(id){
     const itemPricesection = document.getElementById(`price-section-${id}`)
     itemPricesection.style.display='none'
+    const removeItemIndex = uniqueAddedItemIds.indexOf(id)
     const remainingItemsIds=addedItemsIds.filter(function(element){
         return element!=id
     })
     addedItemsIds=[...remainingItemsIds]
+    console.log(addedLists)
+    addedLists.splice(removeItemIndex,1)
+    console.log(addedLists)
+    menuArray.forEach(function(item){
+        if (item.id===id){
+            totalPrice=totalPrice-item.price
+        }
+    })
+    totalPriceEl.textContent=`$${totalPrice}`
+    const itemAddBtn = document.getElementById(`item-add-${id}`)
+    itemAddBtn.disabled = true
+    // addedItems.splice(removeItemIndex,1)
 }
 
 function renderPrices(id){
@@ -86,20 +89,35 @@ function renderPrices(id){
         }
     })
 
-    const addedItems = menuArray.map(function(item){
+    menuArray.forEach(function(item){
 
-        if (item.id===id && countOfId===1 && addedItemsIds.includes(id)){
-            console.log(item.price)
+        if (item.id===id && countOfId===1){
             totalPrice+=item.price
-            console.log(`at count 1 total price:${totalPrice}`)
-            return `
+            const listHtml = `
             <li class='item-price-section' id='price-section-${item.id}'>
                     <p class='added-item-name'>${item.name}</p>
                     <button id='remove-btn-${item.id}' class='remove-btn'>remove</button>
                     <p id='count-item-${item.id}' class='item-count'>Count:${countOfId}</p>
                     <p id='price-${item.id}' class='added-item-price'>$${item.price}</p>
             </li>`
-        }else if(countOfId>1 && item.id===id){
+            addedLists.push(listHtml)
+            uniqueAddedItemIds.push(id)
+            priceSection.style.display='block'
+            completeOrder.style.display='block'
+            priceList.innerHTML+=addedLists.at(-1)
+            const itemPricesection2 = document.getElementById(`price-section-${id}`)
+            itemPricesection2.style.display='flex'
+
+
+            // return `
+            // <li class='item-price-section' id='price-section-${item.id}'>
+            //         <p class='added-item-name'>${item.name}</p>
+            //         <button id='remove-btn-${item.id}' class='remove-btn'>remove</button>
+            //         <p id='count-item-${item.id}' class='item-count'>Count:${countOfId}</p>
+            //         <p id='price-${item.id}' class='added-item-price'>$${item.price}</p>
+            // </li>`
+        }
+        else if(countOfId>1 && item.id===id){
             const countItems = document.getElementById(`count-item-${id}`)
             const priceEl = document.getElementById(`price-${id}`)
             countItems.textContent = `Count:${countOfId}`
@@ -112,27 +130,22 @@ function renderPrices(id){
             const totalPriceOfItem = priceOfSingleItem*countOfId
             priceEl.textContent = `$${totalPriceOfItem}`
             totalPrice+=priceOfSingleItem
-            console.log(`after count exceeds 1 price:${totalPrice}`)
         }
     })
-
-    priceSection.style.display='block'
-    completeOrder.style.display='block'
-    priceList.innerHTML+=addedItems.join('')
-
-    const totalPriceEl = document.getElementById('total-price')
+    console.log(addedItemsIds)
     totalPriceEl.textContent=`$${totalPrice}`
-
 
     // remove price section
 
-    // const itemPricesection2 = document.getElementById(`price-section-${id}`)
-    // itemPricesection2.style.display='flex'
+
     // console.log(addedItemsIds)
     
 
 }
 
+function randomNumberGenerator(){
+    return Math.floor(Math.random()*3)
+}
 
 
 function renderItemsList(){

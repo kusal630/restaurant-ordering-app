@@ -131,6 +131,7 @@ header{
     list-style-type:none;
     margin:50px 0px 0px 46px;
     padding:0px;
+    font-family: "Smythe", system-ui;
 }
 
 .item-emoji{
@@ -145,18 +146,21 @@ header{
 
 .item-name{
     margin:0px;
-    font-family: "Smythe", system-ui;
     font-weight: regular;
     color:#000000;
     font-size:28px;
 }
 
 .item-ingredients{
-    margin:0px;
+    margin:10px 0px;
+    color:#8B8B8B;
+    font-size:16px;
 }
 
 .item-price{
     margin:0px;
+    font-size:20px;
+    color:#000000;
 }
 
 .item-add-button{
@@ -234,9 +238,10 @@ header{
     justify-content:center;
     background:#ECFDF5;
     color:#065F46;
+    font-size:32px;
+    font-family: "Smythe", system-ui;
+
 }
 
 #message{
-    font-size:32px;
-    font-family: "Smythe", system-ui;
 }
